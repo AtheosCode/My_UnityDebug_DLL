@@ -1,0 +1,6 @@
+E:\VSproject\Logger\Logger\bin\Debug\Logger.dll
+E:\VSproject\Logger\Logger\bin\Debug\Logger.pdb
+E:\VSproject\Logger\Logger\bin\Debug\UnityEngine.dll
+E:\VSproject\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+E:\VSproject\Logger\Logger\obj\Debug\Logger.dll
+E:\VSproject\Logger\Logger\obj\Debug\Logger.pdb
