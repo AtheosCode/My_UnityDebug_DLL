@@ -4,3 +4,7 @@ E:\VSproject\Logger\Logger\bin\Debug\UnityEngine.dll
 E:\VSproject\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
 E:\VSproject\Logger\Logger\obj\Debug\Logger.dll
 E:\VSproject\Logger\Logger\obj\Debug\Logger.pdb
+E:\GitHub\My_UnityDebug_DLL\Logger\bin\Debug\Logger.dll
+E:\GitHub\My_UnityDebug_DLL\Logger\bin\Debug\Logger.pdb
+E:\GitHub\My_UnityDebug_DLL\Logger\obj\Debug\Logger.dll
+E:\GitHub\My_UnityDebug_DLL\Logger\obj\Debug\Logger.pdb

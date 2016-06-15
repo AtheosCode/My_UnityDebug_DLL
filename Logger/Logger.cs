@@ -13,7 +13,11 @@ public enum LogLevel {
 }
 
 public class Logger {
+#if UNITY_EDITOR
     public static bool isDegLog = true;
+#else
+    public static bool isDegLog = false;
+#endif
     public static List<string> logInfo = new List<string>();
 
     /// <summary>
@@ -61,7 +65,7 @@ public class Logger {
     }
 
     private static void LogInfo(LogLevel eLevel, string msg, params object[] args) {
-        #region Atheos
+#region Atheos
         if (args.Length > 0) {
             msg = string.Format(msg, args);
         }
@@ -100,6 +104,6 @@ public class Logger {
         string time = System.DateTime.Now.ToShortDateString();
         msg = time + msg;
         logInfo.Add(msg);
-        #endregion Atheos
+#endregion Atheos
     }
 }
