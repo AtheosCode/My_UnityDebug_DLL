@@ -8,3 +8,4 @@ E:\GitHub\My_UnityDebug_DLL\Logger\bin\Debug\Logger.dll
 E:\GitHub\My_UnityDebug_DLL\Logger\bin\Debug\Logger.pdb
 E:\GitHub\My_UnityDebug_DLL\Logger\obj\Debug\Logger.dll
 E:\GitHub\My_UnityDebug_DLL\Logger\obj\Debug\Logger.pdb
+E:\GitHub\My_UnityDebug_DLL\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache

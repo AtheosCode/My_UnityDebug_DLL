@@ -101,7 +101,7 @@ public class Logger {
                 }
                 break;
         }
-        string time = System.DateTime.Now.ToShortDateString();
+        string time = System.DateTime.Now.ToString();
         msg = time + msg;
         logInfo.Add(msg);
 #endregion Atheos
