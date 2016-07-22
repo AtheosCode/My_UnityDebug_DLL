@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using UnityEngine;
@@ -13,12 +12,24 @@ public enum LogLevel {
 }
 
 public class Logger {
-#if UNITY_EDITOR
+    /// <summary>
+    /// 是否打印到控制台
+    /// </summary>
     public static bool isDegLog = true;
-#else
-    public static bool isDegLog = false;
-#endif
-    public static List<string> logInfo = new List<string>();
+    /// <summary>
+    /// 错误信息List
+    /// </summary>
+    private static List<string> logInfoList = new List<string>();
+
+    public static List<string> LogInfoList {
+        get {
+            return logInfoList;
+        }
+
+        private set {
+            logInfoList = value;
+        }
+    }
 
     /// <summary>
     /// 把打印信息写入文件
@@ -34,8 +45,8 @@ public class Logger {
         }
 
         pkSw = new StreamWriter(pkFs, Encoding.Unicode);
-        for (int i = 0; i < logInfo.Count; i++) {
-            pkSw.Write(logInfo[i]);
+        for (int i = 0; i < LogInfoList.Count; i++) {
+            pkSw.Write(LogInfoList[i]);
             pkSw.WriteLine("\n");
         }
         pkSw.Close();
@@ -45,27 +56,26 @@ public class Logger {
     }
 
     public static void Log(string msg, params object[] args) {
-        LogInfo(LogLevel.LL_NORMAL, msg, args);
+        Print(LogLevel.LL_NORMAL, msg, args);
     }
 
     public static void LogBadError(string msg, params object[] args) {
-        LogInfo(LogLevel.LL_BADERROR, msg, args);
+        Print(LogLevel.LL_BADERROR, msg, args);
     }
 
     public static void LogError(string msg, params object[] args) {
-        LogInfo(LogLevel.LL_ERROR, msg, args);
+        Print(LogLevel.LL_ERROR, msg, args);
     }
 
     public static void LogException(System.Exception ex) {
-        LogInfo(LogLevel.LL_EXCEPTION, ex.Message);
+        Print(LogLevel.LL_EXCEPTION, ex.Message);
     }
 
     public static void LogWarning(string msg, params object[] args) {
-        LogInfo(LogLevel.LL_WARNING, msg, args);
+        Print(LogLevel.LL_WARNING, msg, args);
     }
 
-    private static void LogInfo(LogLevel eLevel, string msg, params object[] args) {
-#region Atheos
+    private static void Print(LogLevel eLevel, string msg, params object[] args) {
         if (args.Length > 0) {
             msg = string.Format(msg, args);
         }
@@ -103,7 +113,6 @@ public class Logger {
         }
         string time = System.DateTime.Now.ToString();
         msg = time + msg;
-        logInfo.Add(msg);
-#endregion Atheos
+        LogInfoList.Add(msg);
     }
 }
